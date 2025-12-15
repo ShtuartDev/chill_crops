@@ -1,0 +1,285 @@
+[gd_scene load_steps=13 format=3 uid="uid://bsmwd1ksibte7"]
+
+[ext_resource type="Script" uid="uid://cs2t0dgk7x22a" path="res://scripts/main.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://d3f5tv0jiehsn" path="res://scenes/dice.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://w08wq3xgbamo" path="res://scenes/field.tscn" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://b6sv6ij17ol1h" path="res://assets/back.png" id="2_vtaks"]
+[ext_resource type="Script" uid="uid://bntwobquxnxxw" path="res://scripts/txt.gd" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://ce34yigjjcadt" path="res://scenes/shop.tscn" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://chvb1ygemf3ra" path="res://assets/quit.png" id="5_p57ef"]
+[ext_resource type="Texture2D" uid="uid://up56vfjvbqya" path="res://assets/tut.png" id="6_u5sy4"]
+[ext_resource type="Script" uid="uid://c4nrtog4w2pv0" path="res://scripts/tutorial.gd" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://bjog244e03av" path="res://scenes/kill.tscn" id="9_0tnpc"]
+
+[sub_resource type="GDScript" id="GDScript_lbhrr"]
+script/source = "extends Button
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5sy4"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_lnu2h")
+
+[node name="background" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.19607843)
+z_index = -1
+position = Vector2(320, 180)
+texture = ExtResource("2_vtaks")
+
+[node name="dice" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(332, 70)
+
+[node name="dice2" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(288, 70)
+
+[node name="fields" type="Node" parent="."]
+
+[node name="field" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(372, 152)
+
+[node name="field2" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(406, 152)
+
+[node name="field3" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(440, 152)
+
+[node name="field4" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(508, 152)
+
+[node name="field5" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(474, 152)
+
+[node name="field6" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(372, 186)
+
+[node name="field7" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(406, 186)
+
+[node name="field8" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(440, 186)
+
+[node name="field9" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(508, 186)
+
+[node name="field10" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(474, 186)
+
+[node name="field11" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(372, 220)
+
+[node name="field12" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(406, 220)
+
+[node name="field13" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(440, 220)
+
+[node name="field14" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(508, 220)
+
+[node name="field15" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(474, 220)
+
+[node name="field16" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(372, 254)
+
+[node name="field17" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(406, 254)
+
+[node name="field18" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(440, 254)
+
+[node name="field19" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(508, 254)
+
+[node name="field20" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(474, 254)
+
+[node name="field21" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(372, 288)
+
+[node name="field22" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(406, 288)
+
+[node name="field23" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(440, 288)
+
+[node name="field24" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(508, 288)
+
+[node name="field25" parent="fields" instance=ExtResource("2_lnu2h")]
+position = Vector2(474, 288)
+
+[node name="txt" type="Node" parent="."]
+script = ExtResource("4_lbhrr")
+
+[node name="actions" type="Label" parent="txt"]
+offset_left = 5.0
+offset_top = 22.0
+offset_right = 110.0
+offset_bottom = 45.0
+text = "action: x/max"
+metadata/_edit_use_anchors_ = true
+
+[node name="wheat" type="Label" parent="txt"]
+offset_left = 5.0
+offset_top = 54.0
+offset_right = 71.0
+offset_bottom = 77.0
+text = "wheat: x"
+metadata/_edit_use_anchors_ = true
+
+[node name="cash" type="Label" parent="txt"]
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 67.0
+offset_bottom = 100.0
+text = "cash: $x"
+metadata/_edit_use_anchors_ = true
+
+[node name="days" type="Label" parent="txt"]
+offset_left = 583.0
+offset_top = 77.0
+offset_right = 632.0
+offset_bottom = 100.0
+text = "day: x"
+metadata/_edit_use_anchors_ = true
+
+[node name="blanky" type="Label" parent="txt"]
+offset_left = 5.0
+offset_top = 100.0
+offset_right = 89.0
+offset_bottom = 123.0
+text = "blankets: x"
+metadata/_edit_use_anchors_ = true
+
+[node name="reqBlan" type="Label" parent="txt"]
+offset_left = 474.0
+offset_top = 100.0
+offset_right = 629.0
+offset_bottom = 123.0
+text = "required blankets: x"
+metadata/_edit_use_anchors_ = true
+
+[node name="buttons" type="Node" parent="."]
+
+[node name="shopb" type="Button" parent="buttons"]
+offset_left = 5.0
+offset_top = 136.0
+offset_right = 114.0
+offset_bottom = 169.0
+text = "shop"
+
+[node name="work" type="Button" parent="buttons"]
+offset_left = 5.0
+offset_top = 188.0
+offset_right = 114.0
+offset_bottom = 221.0
+text = "work field (5)"
+
+[node name="plant" type="Button" parent="buttons"]
+offset_left = 5.0
+offset_top = 228.0
+offset_right = 114.0
+offset_bottom = 261.0
+text = "plant (3)"
+
+[node name="harvest" type="Button" parent="buttons"]
+offset_left = 5.0
+offset_top = 268.0
+offset_right = 114.0
+offset_bottom = 301.0
+text = "harvest (1)"
+
+[node name="endTurn" type="Button" parent="buttons"]
+offset_left = 5.0
+offset_top = 320.0
+offset_right = 114.0
+offset_bottom = 353.0
+text = "end"
+script = SubResource("GDScript_lbhrr")
+
+[node name="quit" type="Button" parent="buttons"]
+offset_left = 583.0
+offset_top = 22.0
+offset_right = 624.0
+offset_bottom = 63.0
+icon = ExtResource("5_p57ef")
+
+[node name="tut" type="Button" parent="buttons"]
+offset_left = 533.0
+offset_top = 22.0
+offset_right = 574.0
+offset_bottom = 63.0
+icon = ExtResource("6_u5sy4")
+
+[node name="shop" parent="." instance=ExtResource("5_iywne")]
+offset_left = 160.0
+offset_top = 136.0
+offset_right = 583.0
+offset_bottom = 305.0
+
+[node name="tutorial" type="Control" parent="."]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 361.0
+script = ExtResource("8_gee14")
+
+[node name="Panel" type="Panel" parent="tutorial"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+offset_right = 640.0
+offset_bottom = 361.0
+
+[node name="Label" type="Label" parent="tutorial"]
+layout_mode = 1
+offset_left = 211.0
+offset_right = 430.0
+offset_bottom = 45.0
+text = "The TUTORIAL"
+label_settings = SubResource("LabelSettings_u5sy4")
+
+[node name="Label2" type="Label" parent="tutorial"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 54.0
+offset_right = 643.0
+offset_bottom = 363.0
+text = "Winter is coming... and it's cold.
+
+Put the backyard to good use by growing crops and selling them to afford 
+blankets.
+Every week it gets colder, so get twice as many blankets!
+Hiring extra help in the shop increases action limit.
+A fiddy buck turns back time for a day, don't question it.
+Ending the day restores your actions, but for every tilled dirt patch 2 dice are 
+rolled:
+-If it hits snake-eyes (2x 1) every tilled patch freezes over, requiring extra work in
+ the next turn. 
+-If it hits 2x 6 every planted crop blooms."
+
+[node name="back" type="Button" parent="tutorial"]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 22.0
+offset_right = 628.0
+offset_bottom = 53.0
+text = "back"
+
+[node name="kill" parent="." instance=ExtResource("9_0tnpc")]
+visible = false
+
+[connection signal="pressed" from="buttons/shopb" to="." method="_on_shopb_pressed"]
+[connection signal="pressed" from="buttons/work" to="." method="_on_work_pressed"]
+[connection signal="pressed" from="buttons/plant" to="." method="_on_plant_pressed"]
+[connection signal="pressed" from="buttons/harvest" to="." method="_on_harvest_pressed"]
+[connection signal="pressed" from="buttons/endTurn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="buttons/tut" to="." method="_on_tut_pressed"]
+[connection signal="pressed" from="tutorial/back" to="tutorial" method="_on_back_pressed"]
